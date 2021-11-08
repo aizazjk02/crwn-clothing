@@ -1,12 +1,14 @@
 import React from "react";
 import "./menu-item.styles.scss";
-
-// functional menuItem component 
-const MenuItem = ({ title, imageUrl,size }) => {
+import { withRouter } from "react-router-dom";
+// functional menuItem component
+const MenuItem = ({ title, imageUrl,history,match,size,linkUrl }) => {
   return (
     <div
       // Dynamic class
       className={`${size} menu-item`}
+      onClick={() => (history.push(`${match.url}${linkUrl}`))}
+    
     >
       <div
         className="background-image"
@@ -22,4 +24,7 @@ const MenuItem = ({ title, imageUrl,size }) => {
   );
 };
 
-export default MenuItem;
+
+
+
+export default withRouter(MenuItem);
