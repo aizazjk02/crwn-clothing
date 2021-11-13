@@ -19,6 +19,7 @@ const config = {
   measurementId: "G-J1K0L42R39",
 };
 
+// Function to create the user records inside the database 
 export const createUserProfileDocument = async (userAuth, additionlData) => {
   if (!userAuth) return;
   const userRef = firestore.doc(`users/${userAuth.uid}`);
@@ -41,6 +42,7 @@ export const createUserProfileDocument = async (userAuth, additionlData) => {
   }
   return userRef;
 };
+
 // initialising the firebase with the config object from the portal
 firebase.initializeApp(config);
 
