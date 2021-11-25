@@ -4,8 +4,9 @@ import { combineReducers } from "redux";
 
 // Importing the userReducer 
 import userReducer from "./user/user.reducer";
-
+import cartReducer from "./cart/cart.reducer";
 // intialising the user Reducer with the key, so that we can export and use it 
 export default combineReducers({
   user: userReducer,
+  cart:cartReducer,
 });
